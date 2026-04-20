@@ -1001,7 +1001,7 @@
     <li><a href="#links">Links</a></li>
     <li><a href="https://client.everfit.io/login/i/34HW8JV7K6" target="_blank" class="btn-nav">Client Login</a></li>
   </ul>
-  <button class="hamburger" onclick="toggleMobile()" aria-label="Menu">
+  <button class="hamburger" onclick="toggleMobile(event)" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
@@ -1493,7 +1493,8 @@
   });
 
   // Mobile menu toggle
-  function toggleMobile() {
+  function toggleMobile(e) {
+    if (e) { e.preventDefault(); e.stopPropagation(); }
     var menu = document.getElementById('mobileMenu');
     var isVisible = window.getComputedStyle(menu).display !== 'none';
     menu.style.display = isVisible ? 'none' : 'flex';
@@ -1505,7 +1506,9 @@
 
   document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.mobile-menu a').forEach(function(link) {
-      link.addEventListener('click', closeMobile);
+      link.addEventListener('click', function(e) {
+        setTimeout(closeMobile, 50);
+      });
     });
   });
 
