@@ -605,6 +605,11 @@
     border-bottom: 1px solid rgba(129,139,126,0.3);
   }
 
+  .faq-item summary {
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+
   .faq-question {
     width: 100%;
     display: flex;
@@ -624,6 +629,7 @@
   }
 
   .faq-question:hover { color: var(--primary); }
+  details[open] .faq-question { color: var(--primary); }
 
   .faq-icon {
     font-size: 1.3rem;
@@ -633,8 +639,10 @@
     margin-left: 1rem;
   }
 
+  details[open] .faq-icon { transform: rotate(45deg); }
+
   .faq-answer {
-    display: none;
+    display: block;
     padding: 0 0 1.8rem;
     font-family: var(--sans);
     font-size: 0.93rem;
@@ -642,9 +650,6 @@
     line-height: 1.8;
     color: #4a4340;
   }
-
-  .faq-answer.open { display: block; }
-  .faq-item.open .faq-icon { transform: rotate(45deg); }
 
   /* ── LINKS PAGE ── */
   .links-page {
@@ -890,7 +895,7 @@
     </div>
     <div>
       <p>Alexandra Somm Fit is rooted in my journey towards personal transformation. Having faced my own challenges with body image and my relationship with food, I've learned firsthand the importance of tailored fitness and nutrition guidance. Now a CPT and CNC, I'm dedicated to guiding you towards your specific fitness and nutrition goals.</p>
-      <button class="btn-outline-white" href="#about">More About Me</button>
+      <a class="btn-outline-white" href="#about">More About Me</a>
     </div>
   </section>
 
@@ -948,35 +953,35 @@
     </div>
     <div class="faq-body">
 
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
+      <details class="faq-item">
+        <summary class="faq-question">
           Do you offer workout plans outside of 1-on-1 coaching?
           <span class="faq-icon">+</span>
-        </button>
+        </summary>
         <div class="faq-answer">
           Yes! While 1-on-1 coaching is the most hands-on and effective route, I understand it may not be for everyone! That's why I have two programs available for a one-time purchase. (Coming Soon)
         </div>
-      </div>
+      </details>
 
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
+      <details class="faq-item">
+        <summary class="faq-question">
           How much is 1-on-1 coaching?
           <span class="faq-icon">+</span>
-        </button>
+        </summary>
         <div class="faq-answer">
           Personalized 1-on-1 nutrition coaching and personal training is $150 a month, with discounts for long-term partnerships. That's about $5 a day to start building habits that will last a lifetime and start down the path of becoming the best version of yourself!
         </div>
-      </div>
+      </details>
 
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
+      <details class="faq-item">
+        <summary class="faq-question">
           Where do I check in and message you?
           <span class="faq-icon">+</span>
-        </button>
+        </summary>
         <div class="faq-answer">
           All check-ins, messages, and everything having to do with your training plan will be found in your client portal. Here you can see your meals, workouts, progress and everything else needed to make this health journey a reality! Your client portal can be found <a href="https://client.everfit.io/login/i/34HW8JV7K6" target="_blank" style="color:var(--primary);">here</a>.
         </div>
-      </div>
+      </details>
 
     </div>
 
