@@ -1482,13 +1482,7 @@
     history.replaceState(null, '', window.location.pathname);
   }
 
-  // Clean hash on load and on any anchor click
   window.addEventListener('load', cleanHash);
-  document.addEventListener('click', function(e) {
-    if (e.target.closest('a[href^="#"]')) {
-      setTimeout(cleanHash, 50);
-    }
-  });
 
   // Mobile menu toggle
   var mobileMenuOpen = false;
@@ -1547,7 +1541,6 @@
       item.classList.add('open');
       answer.classList.add('open');
     }
-  }
   }
 </script>
 </body>
