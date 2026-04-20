@@ -35,7 +35,7 @@
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
-    z-index: 100;
+    z-index: 150;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -116,11 +116,11 @@
     background: var(--bg);
     border-bottom: 1px solid rgba(167,77,74,0.15);
     padding: 1.5rem 3rem;
-    z-index: 99;
+    z-index: 200;
     flex-direction: column;
     gap: 1rem;
   }
-  .mobile-menu.open { display: flex; }
+  .mobile-menu.open { display: flex !important; }
   .mobile-menu a {
     font-family: var(--sans);
     font-size: 0.85rem;
@@ -1303,41 +1303,62 @@
 
     </div>
 
-    <!-- DO YOU QUALIFY -->
-    <div style="background:var(--dark-text);padding:5rem 2rem;">
+    <!-- YOU'RE IN THE RIGHT PLACE -->
+    <div style="background:var(--secondary);padding:5rem 2rem;">
+      <style>@media(max-width:768px){.qualify-grid{grid-template-columns:1fr !important;}}</style>
       <div style="max-width:720px;margin:0 auto;">
-        <p class="section-label" style="color:rgba(245,245,245,0.5);margin-bottom:0.75rem;">Is This For You?</p>
-        <h2 style="font-family:var(--serif);font-size:clamp(2rem,4vw,3.2rem);font-weight:600;color:var(--white);margin-bottom:0.5rem;">Do You Qualify?</h2>
-        <p style="font-family:var(--sans);font-size:0.9rem;color:rgba(245,245,245,0.6);margin-bottom:3rem;">In order to work together, you must:</p>
+        <p class="section-label" style="color:rgba(245,245,245,0.7);margin-bottom:0.75rem;">A Good Fit</p>
+        <h2 style="font-family:var(--serif);font-size:clamp(2rem,4vw,3.2rem);font-weight:600;color:var(--white);margin-bottom:0.5rem;">You're in the Right Place If...</h2>
+        <p style="font-family:var(--sans);font-size:0.9rem;color:rgba(245,245,245,0.85);margin-bottom:3rem;">This coaching was built for someone specific. See if that's you.</p>
 
-        <div style="display:flex;flex-direction:column;gap:0.75rem;margin-bottom:3rem;">
-          <div style="display:grid;grid-template-columns:40px 1fr;align-items:center;gap:1rem;background:rgba(255,255,255,0.06);padding:1.4rem 1.6rem;">
-            <span style="color:var(--primary);font-size:1.2rem;">→</span>
-            <p style="font-family:var(--sans);font-size:0.92rem;color:var(--white);line-height:1.6;">Be <strong>ready to implement</strong> — not just learn, but actually do the work and make changes.</p>
+        <div class="qualify-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-bottom:3rem;">
+          
+          <!-- Left: good fit -->
+          <div>
+            <p style="font-family:var(--sans);font-size:0.68rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:rgba(245,245,245,0.7);margin-bottom:1.25rem;">This is for you if...</p>
+            <div style="display:flex;flex-direction:column;gap:0.75rem;">
+              <div style="display:flex;gap:1rem;align-items:flex-start;">
+                <span style="color:var(--white);font-size:1rem;margin-top:0.1rem;flex-shrink:0;">→</span>
+                <p style="font-family:var(--sans);font-size:0.88rem;color:var(--white);line-height:1.7;">You're <strong>ready to implement</strong> — not just learn, but actually do the work.</p>
+              </div>
+              <div style="display:flex;gap:1rem;align-items:flex-start;">
+                <span style="color:var(--white);font-size:1rem;margin-top:0.1rem;flex-shrink:0;">→</span>
+                <p style="font-family:var(--sans);font-size:0.88rem;color:var(--white);line-height:1.7;">You want a <strong>real lifestyle change</strong> — not a quick fix.</p>
+              </div>
+              <div style="display:flex;gap:1rem;align-items:flex-start;">
+                <span style="color:var(--white);font-size:1rem;margin-top:0.1rem;flex-shrink:0;">→</span>
+                <p style="font-family:var(--sans);font-size:0.88rem;color:var(--white);line-height:1.7;">You're <strong>open to tracking your food</strong>, at least to start.</p>
+              </div>
+              <div style="display:flex;gap:1rem;align-items:flex-start;">
+                <span style="color:var(--white);font-size:1rem;margin-top:0.1rem;flex-shrink:0;">→</span>
+                <p style="font-family:var(--sans);font-size:0.88rem;color:var(--white);line-height:1.7;">You're <strong>willing to trust the process</strong> — results take time.</p>
+              </div>
+              <div style="display:flex;gap:1rem;align-items:flex-start;">
+                <span style="color:var(--white);font-size:1rem;margin-top:0.1rem;flex-shrink:0;">→</span>
+                <p style="font-family:var(--sans);font-size:0.88rem;color:var(--white);line-height:1.7;">You're at <strong>any fitness level</strong> — beginners are absolutely welcome.</p>
+              </div>
+            </div>
           </div>
-          <div style="display:grid;grid-template-columns:40px 1fr;align-items:center;gap:1rem;background:rgba(255,255,255,0.06);padding:1.4rem 1.6rem;">
-            <span style="color:var(--primary);font-size:1.2rem;">→</span>
-            <p style="font-family:var(--sans);font-size:0.92rem;color:var(--white);line-height:1.6;">Want a <strong>real lifestyle change</strong> — not a quick fix or a crash diet.</p>
-          </div>
-          <div style="display:grid;grid-template-columns:40px 1fr;align-items:center;gap:1rem;background:rgba(255,255,255,0.06);padding:1.4rem 1.6rem;">
-            <span style="color:var(--primary);font-size:1.2rem;">→</span>
-            <p style="font-family:var(--sans);font-size:0.92rem;color:var(--white);line-height:1.6;">Be <strong>open to tracking your food</strong>, at least to start — this is how we build real awareness of what your body needs.</p>
-          </div>
-          <div style="display:grid;grid-template-columns:40px 1fr;align-items:center;gap:1rem;background:rgba(255,255,255,0.06);padding:1.4rem 1.6rem;">
-            <span style="color:var(--primary);font-size:1.2rem;">→</span>
-            <p style="font-family:var(--sans);font-size:0.92rem;color:var(--white);line-height:1.6;">Be <strong>willing to trust the process</strong> — results take time and consistency, and I'll be with you every step of the way.</p>
-          </div>
-          <div style="display:grid;grid-template-columns:40px 1fr;align-items:center;gap:1rem;background:rgba(255,255,255,0.06);padding:1.4rem 1.6rem;">
-            <span style="color:var(--primary);font-size:1.2rem;">→</span>
-            <p style="font-family:var(--sans);font-size:0.92rem;color:var(--white);line-height:1.6;">Be at <strong>any fitness level</strong> — complete beginners are just as welcome as those who have been training for years.</p>
-          </div>
-        </div>
 
-        <p style="font-family:var(--sans);font-size:0.72rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(245,245,245,0.35);margin-bottom:1rem;">This may not be the right fit if you:</p>
-        <div style="display:flex;flex-direction:column;gap:0.5rem;margin-bottom:3rem;">
-          <p style="font-family:var(--sans);font-size:0.85rem;color:rgba(245,245,245,0.45);line-height:1.7;padding-left:1rem;border-left:2px solid rgba(255,255,255,0.1);">Have a diagnosed eating disorder or medical condition requiring clinical care</p>
-          <p style="font-family:var(--sans);font-size:0.85rem;color:rgba(245,245,245,0.45);line-height:1.7;padding-left:1rem;border-left:2px solid rgba(255,255,255,0.1);">Are preparing for athletic competition requiring specialized sport-specific programming</p>
-          <p style="font-family:var(--sans);font-size:0.85rem;color:rgba(245,245,245,0.45);line-height:1.7;padding-left:1rem;border-left:2px solid rgba(255,255,255,0.1);">Are looking for a short-term fix with no intention of maintaining the habits long term</p>
+          <!-- Right: not a fit -->
+          <div>
+            <p style="font-family:var(--sans);font-size:0.68rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:rgba(245,245,245,0.7);margin-bottom:1.25rem;">This may not be for you if...</p>
+            <div style="display:flex;flex-direction:column;gap:0.75rem;">
+              <div style="display:flex;gap:1rem;align-items:flex-start;">
+                <span style="color:rgba(245,245,245,0.4);font-size:1rem;margin-top:0.1rem;flex-shrink:0;">✕</span>
+                <p style="font-family:var(--sans);font-size:0.88rem;color:rgba(245,245,245,0.7);line-height:1.7;">You have a diagnosed eating disorder or condition requiring clinical care.</p>
+              </div>
+              <div style="display:flex;gap:1rem;align-items:flex-start;">
+                <span style="color:rgba(245,245,245,0.4);font-size:1rem;margin-top:0.1rem;flex-shrink:0;">✕</span>
+                <p style="font-family:var(--sans);font-size:0.88rem;color:rgba(245,245,245,0.7);line-height:1.7;">You're preparing for athletic competition needing specialized sport programming.</p>
+              </div>
+              <div style="display:flex;gap:1rem;align-items:flex-start;">
+                <span style="color:rgba(245,245,245,0.4);font-size:1rem;margin-top:0.1rem;flex-shrink:0;">✕</span>
+                <p style="font-family:var(--sans);font-size:0.88rem;color:rgba(245,245,245,0.7);line-height:1.7;">You're looking for a short-term fix with no interest in maintaining the habits.</p>
+              </div>
+            </div>
+          </div>
+
         </div>
 
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSdsPOVla1T02BFLcUmGysEuQvgB2FcDOmXkW-Qp_vLt47cvrA/viewform" target="_blank" style="display:inline-block;padding:1rem 2.5rem;background:var(--primary);color:var(--white);font-family:var(--sans);font-size:0.78rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;">I'm Ready to Get Started</a>
