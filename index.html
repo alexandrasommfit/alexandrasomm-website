@@ -1162,14 +1162,14 @@
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSdsPOVla1T02BFLcUmGysEuQvgB2FcDOmXkW-Qp_vLt47cvrA/viewform" target="_blank" style="margin-top:auto;padding-top:1rem;font-family:var(--sans);font-size:0.72rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--primary);text-decoration:none;">Inquire →</a>
           </div>
 
-          <div style="background:var(--primary);padding:2rem;border:1px solid rgba(167,77,74,0.15);display:flex;flex-direction:column;gap:0.75rem;position:relative;">
-            <p style="font-family:var(--sans);font-size:0.68rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,245,245,0.7);">Training + Nutrition</p>
+          <div style="background:var(--white);padding:2rem;border:1px solid rgba(167,77,74,0.15);display:flex;flex-direction:column;gap:0.75rem;">
+            <p style="font-family:var(--sans);font-size:0.68rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--secondary);">Training + Nutrition</p>
             <div style="display:flex;align-items:baseline;gap:0.75rem;">
-              <p style="font-family:var(--serif);font-size:2rem;font-weight:600;color:var(--white);">$135</p>
-              <p style="font-family:var(--sans);font-size:0.78rem;color:rgba(245,245,245,0.7);text-decoration:line-through;">$150</p>
+              <p style="font-family:var(--serif);font-size:2rem;font-weight:600;color:var(--dark-text);">$135</p>
+              <p style="font-family:var(--sans);font-size:0.78rem;color:#4a4340;text-decoration:line-through;">$150</p>
             </div>
-            <p style="font-family:var(--sans);font-size:0.88rem;color:rgba(245,245,245,0.92);line-height:1.7;">Both a custom training program and nutrition plan delivered together at a discount. Includes onboarding form, kick-off call, both plan deliveries, and one follow-up call.</p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdsPOVla1T02BFLcUmGysEuQvgB2FcDOmXkW-Qp_vLt47cvrA/viewform" target="_blank" style="margin-top:auto;padding-top:1rem;font-family:var(--sans);font-size:0.72rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--white);text-decoration:none;">Inquire →</a>
+            <p style="font-family:var(--sans);font-size:0.88rem;color:#4a4340;line-height:1.7;">Both a custom training program and nutrition plan delivered together at a discount. Includes onboarding form, kick-off call, both plan deliveries, and one follow-up call.</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdsPOVla1T02BFLcUmGysEuQvgB2FcDOmXkW-Qp_vLt47cvrA/viewform" target="_blank" style="margin-top:auto;padding-top:1rem;font-family:var(--sans);font-size:0.72rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--primary);text-decoration:none;">Inquire →</a>
           </div>
 
         </div>
@@ -1494,12 +1494,26 @@
 
   // Mobile menu toggle
   function toggleMobile() {
-    document.getElementById('mobileMenu').classList.toggle('open');
+    var menu = document.getElementById('mobileMenu');
+    if (menu.style.display === 'flex') {
+      menu.style.display = 'none';
+    } else {
+      menu.style.display = 'flex';
+    }
   }
 
   function closeMobile() {
-    document.getElementById('mobileMenu').classList.remove('open');
+    document.getElementById('mobileMenu').style.display = 'none';
   }
+
+  // Close when any mobile link is clicked
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.mobile-menu a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        document.getElementById('mobileMenu').style.display = 'none';
+      });
+    });
+  });
 
   // Close mobile menu when a link is clicked
   document.addEventListener('DOMContentLoaded', function() {
