@@ -1065,6 +1065,88 @@
     .newsletter-form input { border-right: 1px solid rgba(167,77,74,0.3); border-bottom: none; }
   }
 
+/* ── NEWSLETTER ── */
+  .newsletter-section {
+    background: var(--cream);
+    padding: 5rem 2rem;
+    text-align: center;
+    border-top: 1px solid rgba(167,77,74,0.1);
+  }
+
+  .newsletter-section h2 {
+    font-family: var(--serif);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 600;
+    color: var(--dark-text);
+    margin-bottom: 0.75rem;
+  }
+
+  .newsletter-section p {
+    font-family: var(--sans);
+    font-size: 0.92rem;
+    color: #4a4340;
+    line-height: 1.7;
+    max-width: 460px;
+    margin: 0 auto 2rem;
+  }
+
+  .newsletter-form {
+    display: flex;
+    gap: 0;
+    max-width: 480px;
+    margin: 0 auto 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .newsletter-form input {
+    flex: 1;
+    min-width: 180px;
+    padding: 0.9rem 1.2rem;
+    border: 1px solid rgba(167,77,74,0.3);
+    border-right: none;
+    background: var(--white);
+    font-family: var(--sans);
+    font-size: 0.88rem;
+    outline: none;
+    color: var(--dark-text);
+    border-radius: 0;
+    -webkit-appearance: none;
+  }
+
+  .newsletter-form input:focus {
+    border-color: var(--primary);
+  }
+
+  .newsletter-form button {
+    padding: 0.9rem 1.8rem;
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s;
+    border-radius: 0;
+  }
+
+  .newsletter-form button:hover { background: var(--dark-text); }
+
+  .newsletter-fine {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    color: #888;
+    margin-top: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .newsletter-form { flex-direction: column; }
+    .newsletter-form input { border-right: 1px solid rgba(167,77,74,0.3); border-bottom: none; }
+  }
+
+
 </style>
 </head>
 <body>
@@ -1364,15 +1446,7 @@
     </div>
     <div class="faq-body">
 
-      <details class="faq-item">
-        <summary class="faq-question">
-          Do you offer workout plans outside of 1-on-1 coaching?
-          <span class="faq-icon">+</span>
-        </summary>
-        <div class="faq-answer">
-          Yes! While 1-on-1 coaching is the most hands-on and effective route, I understand it may not be for everyone! That's why I have two programs available for a one-time purchase. (Coming Soon)
-        </div>
-      </details>
+
 
 
 
@@ -1386,93 +1460,92 @@
         </div>
       </details>
 
+
+      <details class="faq-item">
+        <summary class="faq-question">
+          How do I get started?
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          The first step is reaching out! Fill out the <a href="https://docs.google.com/forms/d/e/1FAIpQLSdsPOVla1T02BFLcUmGysEuQvgB2FcDOmXkW-Qp_vLt47cvrA/viewform" target="_blank" style="color:var(--primary);">coaching inquiry form</a> and I'll be in touch to schedule your kick-off call. From there we'll go over your goals, get everything we need, and build your program from scratch.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">
+          Do I need a gym membership or specific equipment?
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          A gym is recommended, but not required. If you don't have access to one, we'll customize your program to work with whatever equipment you have available — whether that's a full home gym, a set of dumbbells, or no equipment at all.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">
+          Do I have to track my food forever?
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          No — tracking isn't meant to be permanent. The goal is to use it as a tool to build awareness of your macros and intake so that when you're ready to transition to a more intuitive approach, you're doing it with real knowledge behind you. If you already have a healthy relationship with tracking and want to continue, that works too. We'll figure out what's best for you.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">
+          What if I have dietary restrictions or allergies?
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          Not a problem — your nutrition plan is built around you, and that includes any dietary restrictions or allergies. We'll go over everything during your kick-off call and make sure your plan works for your lifestyle.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">
+          How often will we communicate?
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          It depends on your package. With a <strong>one-time custom plan</strong>, we'll have a kick-off call before your plan is built and a follow-up call after delivery to make sure everything makes sense. With <strong>ongoing 1-on-1 coaching</strong>, we check in weekly and you can message me with questions, form check videos, or anything else throughout the month.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">
+          How long until I receive my plan?
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          After your kick-off call, you'll receive your custom plan within one week.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">
+          What if I have questions after I receive my plan?
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          A follow-up call is included with every one-time plan. Once your plan is delivered we'll hop on a quick call to go over any questions or concerns and make sure you feel confident going into it.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">
+          What if I travel or have a busy week?
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          Life happens — travel, busy weeks, unexpected curveballs. This isn't an all-or-nothing approach. Do what you can, and pick right back up the next day. Missing a workout or an imperfect eating day doesn't undo your progress. We keep moving forward.
+        </div>
+      </details>
+
     </div>
 
     <!-- YOU'RE IN THE RIGHT PLACE -->
     <div style="background:var(--primary);padding:5rem 2rem;">
-      <style>@media(max-width:768px){.qualify-grid{grid-template-columns:1fr !important;}}
-  /* ── NEWSLETTER ── */
-  .newsletter-section {
-    background: var(--cream);
-    padding: 5rem 2rem;
-    text-align: center;
-    border-top: 1px solid rgba(167,77,74,0.1);
-  }
-
-  .newsletter-section h2 {
-    font-family: var(--serif);
-    font-size: clamp(1.8rem, 3vw, 2.5rem);
-    font-weight: 600;
-    color: var(--dark-text);
-    margin-bottom: 0.75rem;
-  }
-
-  .newsletter-section p {
-    font-family: var(--sans);
-    font-size: 0.92rem;
-    color: #4a4340;
-    line-height: 1.7;
-    max-width: 460px;
-    margin: 0 auto 2rem;
-  }
-
-  .newsletter-form {
-    display: flex;
-    gap: 0;
-    max-width: 480px;
-    margin: 0 auto 0.75rem;
-    flex-wrap: wrap;
-  }
-
-  .newsletter-form input {
-    flex: 1;
-    min-width: 180px;
-    padding: 0.9rem 1.2rem;
-    border: 1px solid rgba(167,77,74,0.3);
-    border-right: none;
-    background: var(--white);
-    font-family: var(--sans);
-    font-size: 0.88rem;
-    outline: none;
-    color: var(--dark-text);
-    border-radius: 0;
-    -webkit-appearance: none;
-  }
-
-  .newsletter-form input:focus {
-    border-color: var(--primary);
-  }
-
-  .newsletter-form button {
-    padding: 0.9rem 1.8rem;
-    background: var(--primary);
-    color: var(--white);
-    border: none;
-    font-family: var(--sans);
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background 0.2s;
-    border-radius: 0;
-  }
-
-  .newsletter-form button:hover { background: var(--dark-text); }
-
-  .newsletter-fine {
-    font-family: var(--sans);
-    font-size: 0.72rem;
-    color: #888;
-    margin-top: 0.5rem;
-  }
-
-  @media (max-width: 768px) {
-    .newsletter-form { flex-direction: column; }
-    .newsletter-form input { border-right: 1px solid rgba(167,77,74,0.3); border-bottom: none; }
-  }
-
-</style>
+      <style>@media(max-width:768px){.qualify-grid{grid-template-columns:1fr !important;}}</style>
       <div style="max-width:720px;margin:0 auto;">
         <p class="section-label" style="color:rgba(245,245,245,0.8);margin-bottom:0.75rem;">Let's Make Sure We're a Good Fit</p>
         <h2 style="font-family:var(--serif);font-size:clamp(2rem,4vw,3.2rem);font-weight:600;color:var(--white);margin-bottom:0.5rem;">You're in the Right Place If...</h2>
@@ -1712,6 +1785,21 @@
       answer.classList.add('open');
     }
   }
+
+  // Close other details when one opens
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('details.faq-item').forEach(function(detail) {
+      detail.addEventListener('toggle', function() {
+        if (detail.open) {
+          document.querySelectorAll('details.faq-item').forEach(function(other) {
+            if (other !== detail && other.open) {
+              other.removeAttribute('open');
+            }
+          });
+        }
+      });
+    });
+  });
 </script>
 </body>
 </html>
