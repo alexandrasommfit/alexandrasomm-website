@@ -983,6 +983,88 @@
     .services-header { padding: 3.5rem 2rem 2.5rem; }
   }
 
+
+  /* ── NEWSLETTER ── */
+  .newsletter-section {
+    background: var(--cream);
+    padding: 5rem 2rem;
+    text-align: center;
+    border-top: 1px solid rgba(167,77,74,0.1);
+  }
+
+  .newsletter-section h2 {
+    font-family: var(--serif);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 600;
+    color: var(--dark-text);
+    margin-bottom: 0.75rem;
+  }
+
+  .newsletter-section p {
+    font-family: var(--sans);
+    font-size: 0.92rem;
+    color: #4a4340;
+    line-height: 1.7;
+    max-width: 460px;
+    margin: 0 auto 2rem;
+  }
+
+  .newsletter-form {
+    display: flex;
+    gap: 0;
+    max-width: 480px;
+    margin: 0 auto 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .newsletter-form input {
+    flex: 1;
+    min-width: 180px;
+    padding: 0.9rem 1.2rem;
+    border: 1px solid rgba(167,77,74,0.3);
+    border-right: none;
+    background: var(--white);
+    font-family: var(--sans);
+    font-size: 0.88rem;
+    outline: none;
+    color: var(--dark-text);
+    border-radius: 0;
+    -webkit-appearance: none;
+  }
+
+  .newsletter-form input:focus {
+    border-color: var(--primary);
+  }
+
+  .newsletter-form button {
+    padding: 0.9rem 1.8rem;
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s;
+    border-radius: 0;
+  }
+
+  .newsletter-form button:hover { background: var(--dark-text); }
+
+  .newsletter-fine {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    color: #888;
+    margin-top: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .newsletter-form { flex-direction: column; }
+    .newsletter-form input { border-right: 1px solid rgba(167,77,74,0.3); border-bottom: none; }
+  }
+
 </style>
 </head>
 <body>
@@ -1054,7 +1136,21 @@
     </div>
   </section>
 
-  <!-- Testimonials -->
+
+  <!-- Newsletter -->
+  <section class="newsletter-section">
+    <p class="section-label" style="margin-bottom:0.5rem;">Stay Connected</p>
+    <h2>Join the Community</h2>
+    <p>You don't have to figure this out alone. Fitness tips, nutrition advice, and honest updates delivered straight to your inbox.</p>
+    <form action="https://alexandrasomm.us20.list-manage.com/subscribe/post?u=134a16bac8bfe41e668607d91&id=80ffeaa1d6&f_id=000221eef0" method="post" target="_blank" class="newsletter-form">
+      <input type="email" name="EMAIL" placeholder="Your email address" required>
+      <div style="position:absolute;left:-5000px;" aria-hidden="true">
+        <input type="text" name="b_134a16bac8bfe41e668607d91_80ffeaa1d6" tabindex="-1" value="">
+      </div>
+      <button type="submit">Subscribe</button>
+    </form>
+    <p class="newsletter-fine">No spam, ever. Unsubscribe anytime.</p>
+  </section>
 
   <footer>
     <div class="footer-logo">Alexandra Somm Fit</div>
@@ -1116,7 +1212,7 @@
         
         <!-- Coaching first -->
         <p style="font-family:var(--sans);font-size:0.68rem;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:var(--secondary);margin-bottom:0.5rem;">Ongoing 1-on-1 Coaching</p>
-        <p style="font-family:var(--sans);font-size:0.88rem;color:#4a4340;line-height:1.7;margin-bottom:1.5rem;">For the woman who wants the full experience — custom training, nutrition, weekly check-ins, and real ongoing support. This is where the deepest, most lasting change happens.</p>
+        <p style="font-family:var(--sans);font-size:0.88rem;color:#4a4340;line-height:1.7;margin-bottom:1.5rem;">The full experience — custom training, nutrition, weekly check-ins, and real ongoing support. This is where real, lasting change happens.</p>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin-bottom:3rem;">
 
           <div style="background:var(--white);padding:2rem;border:1px solid rgba(167,77,74,0.15);display:flex;flex-direction:column;gap:0.75rem;">
@@ -1143,7 +1239,7 @@
 
         <!-- One-time plans -->
         <p style="font-family:var(--sans);font-size:0.68rem;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:var(--secondary);margin-bottom:0.5rem;">One-Time Custom Plans</p>
-        <p style="font-family:var(--sans);font-size:0.88rem;color:#4a4340;line-height:1.7;margin-bottom:1.5rem;">For the woman who wants a solid starting point without the ongoing commitment. A fully custom plan built for you, delivered once, yours to use and build on.</p>
+        <p style="font-family:var(--sans);font-size:0.88rem;color:#4a4340;line-height:1.7;margin-bottom:1.5rem;">A solid starting point with a fully custom plan built for you, delivered once, and yours to use and build on.</p>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;">
 
           <div style="background:var(--white);padding:2rem;border:1px solid rgba(167,77,74,0.15);display:flex;flex-direction:column;gap:0.75rem;">
@@ -1278,15 +1374,7 @@
         </div>
       </details>
 
-      <details class="faq-item">
-        <summary class="faq-question">
-          How much is 1-on-1 coaching?
-          <span class="faq-icon">+</span>
-        </summary>
-        <div class="faq-answer">
-          Personalized 1-on-1 nutrition coaching and personal training is $150 a month, with discounts for long-term partnerships. That's about $5 a day to start building habits that will last a lifetime and start down the path of becoming the best version of yourself!
-        </div>
-      </details>
+
 
       <details class="faq-item">
         <summary class="faq-question">
@@ -1302,7 +1390,89 @@
 
     <!-- YOU'RE IN THE RIGHT PLACE -->
     <div style="background:var(--primary);padding:5rem 2rem;">
-      <style>@media(max-width:768px){.qualify-grid{grid-template-columns:1fr !important;}}</style>
+      <style>@media(max-width:768px){.qualify-grid{grid-template-columns:1fr !important;}}
+  /* ── NEWSLETTER ── */
+  .newsletter-section {
+    background: var(--cream);
+    padding: 5rem 2rem;
+    text-align: center;
+    border-top: 1px solid rgba(167,77,74,0.1);
+  }
+
+  .newsletter-section h2 {
+    font-family: var(--serif);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 600;
+    color: var(--dark-text);
+    margin-bottom: 0.75rem;
+  }
+
+  .newsletter-section p {
+    font-family: var(--sans);
+    font-size: 0.92rem;
+    color: #4a4340;
+    line-height: 1.7;
+    max-width: 460px;
+    margin: 0 auto 2rem;
+  }
+
+  .newsletter-form {
+    display: flex;
+    gap: 0;
+    max-width: 480px;
+    margin: 0 auto 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .newsletter-form input {
+    flex: 1;
+    min-width: 180px;
+    padding: 0.9rem 1.2rem;
+    border: 1px solid rgba(167,77,74,0.3);
+    border-right: none;
+    background: var(--white);
+    font-family: var(--sans);
+    font-size: 0.88rem;
+    outline: none;
+    color: var(--dark-text);
+    border-radius: 0;
+    -webkit-appearance: none;
+  }
+
+  .newsletter-form input:focus {
+    border-color: var(--primary);
+  }
+
+  .newsletter-form button {
+    padding: 0.9rem 1.8rem;
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s;
+    border-radius: 0;
+  }
+
+  .newsletter-form button:hover { background: var(--dark-text); }
+
+  .newsletter-fine {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    color: #888;
+    margin-top: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .newsletter-form { flex-direction: column; }
+    .newsletter-form input { border-right: 1px solid rgba(167,77,74,0.3); border-bottom: none; }
+  }
+
+</style>
       <div style="max-width:720px;margin:0 auto;">
         <p class="section-label" style="color:rgba(245,245,245,0.8);margin-bottom:0.75rem;">Let's Make Sure We're a Good Fit</p>
         <h2 style="font-family:var(--serif);font-size:clamp(2rem,4vw,3.2rem);font-weight:600;color:var(--white);margin-bottom:0.5rem;">You're in the Right Place If...</h2>
