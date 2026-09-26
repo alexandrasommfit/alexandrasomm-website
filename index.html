@@ -1637,7 +1637,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         </div>
 
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdsPOVla1T02BFLcUmGysEuQvgB2FcDOmXkW-Qp_vLt47cvrA/viewform" target="_blank" style="display:inline-block;padding:1rem 2.5rem;background:var(--white);color:var(--primary);font-family:var(--sans);font-size:0.78rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;">I'm Ready to Get Started</a>
+        <a href="/get-started" style="display:inline-block;padding:1rem 2.5rem;background:var(--white);color:var(--primary);font-family:var(--sans);font-size:0.78rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;">I'm Ready to Get Started</a>
       </div>
     </div>
 
@@ -1904,8 +1904,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <script>
-  // Remove #hash from URL for clean URLs
+  // Show the page matching the URL hash (for deep links from other pages), then clean the URL
   function cleanHash() {
+    var hash = window.location.hash.replace('#', '');
+    if (hash && document.getElementById(hash)) {
+      showPage(hash);
+    }
     history.replaceState(null, '', window.location.pathname);
   }
 
@@ -1943,6 +1947,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       form.addEventListener('submit', async function(e) {
         e.preventDefault();
         var data = new FormData(form);
+        var firstName = data.get('first_name') || '';
+        var lastName = data.get('last_name') || '';
+        var email = data.get('email') || '';
         var response = await fetch(form.action, {
           method: 'POST',
           body: data,
@@ -1950,7 +1957,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         });
         if (response.ok) {
           form.reset();
-          document.getElementById('contact-confirm').style.display = 'block';
+          var confirm = document.getElementById('contact-confirm');
+          confirm.textContent = 'Thanks! One more step… ✦';
+          confirm.style.display = 'block';
+          var params = new URLSearchParams({
+            first_name: firstName,
+            last_name: lastName,
+            email: email
+          });
+          setTimeout(function() {
+            window.location.href = '/get-started?' + params.toString();
+          }, 1000);
         }
       });
     }
