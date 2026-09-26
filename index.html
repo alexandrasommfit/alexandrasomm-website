@@ -573,6 +573,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   .form-group textarea { resize: vertical; min-height: 140px; }
 
+  .form-group select {
+    padding: 0.85rem 1rem;
+    border: 1px solid rgba(167,77,74,0.35);
+    background: var(--white);
+    font-family: var(--sans);
+    font-size: 0.92rem;
+    color: var(--dark-text);
+    outline: none;
+    transition: border-color 0.2s;
+    border-radius: 0;
+  }
+
+  .form-group select:focus { border-color: var(--primary); }
+
   .btn-submit {
     width: 100%;
     padding: 1.1rem;
@@ -1695,8 +1709,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <input type="email" name="email" placeholder="your@email.com" required></label>
         </div>
         <div class="form-group">
-          <label>Subject *
-          <input type="text" name="subject" placeholder="Coaching inquiry, question, etc." required></label>
+          <label>What's this about? *
+          <select name="subject" id="contact-subject" required>
+            <option value="" disabled selected>Select one...</option>
+            <option value="Coaching Inquiry">Coaching Inquiry (Training / Nutrition)</option>
+            <option value="Partnership / UGC / Sponsorship">Partnership, UGC, or Sponsorship</option>
+            <option value="Podcast / Media">Podcast Guest or Media Request</option>
+            <option value="General Question">General Question</option>
+          </select></label>
         </div>
         <div class="form-group">
           <label>Message *
@@ -1950,6 +1970,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         var firstName = data.get('first_name') || '';
         var lastName = data.get('last_name') || '';
         var email = data.get('email') || '';
+        var subject = data.get('subject') || '';
         var response = await fetch(form.action, {
           method: 'POST',
           body: data,
@@ -1958,16 +1979,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         if (response.ok) {
           form.reset();
           var confirm = document.getElementById('contact-confirm');
-          confirm.textContent = 'Thanks! One more step… ✦';
-          confirm.style.display = 'block';
-          var params = new URLSearchParams({
-            first_name: firstName,
-            last_name: lastName,
-            email: email
-          });
-          setTimeout(function() {
-            window.location.href = '/get-started?' + params.toString();
-          }, 1000);
+          if (subject === 'Coaching Inquiry') {
+            // Only coaching inquiries get funneled into the onboarding questionnaire —
+            // partnership/UGC/media/general messages just get the plain thank-you.
+            confirm.textContent = 'Thanks! One more step… ✦';
+            confirm.style.display = 'block';
+            var params = new URLSearchParams({
+              first_name: firstName,
+              last_name: lastName,
+              email: email
+            });
+            setTimeout(function() {
+              window.location.href = '/get-started?' + params.toString();
+            }, 1000);
+          } else {
+            confirm.textContent = "Thanks! I'll be in touch soon ✦";
+            confirm.style.display = 'block';
+          }
         }
       });
     }
