@@ -232,7 +232,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     padding: 0;
   }
 
-  .form-group input:not([type="checkbox"]),
+  .form-group input:not([type="checkbox"]):not([type="radio"]),
   .form-group textarea {
     padding: 0.85rem 1rem;
     border: 1px solid rgba(167,77,74,0.35);
@@ -246,7 +246,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     border-radius: 0;
   }
 
-  .form-group input:not([type="checkbox"]):focus,
+  .form-group input:not([type="checkbox"]):not([type="radio"]):focus,
   .form-group textarea:focus {
     border-color: var(--primary);
     outline: 2px solid var(--primary);
@@ -280,6 +280,54 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .checkbox-item input[type="checkbox"]:focus-visible {
     outline: 2px solid var(--primary);
     outline-offset: 2px;
+  }
+
+  .form-subsection-title {
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin: 0 0 1.25rem;
+  }
+
+  .radio-group { display: flex; gap: 1.75rem; flex-wrap: wrap; margin-top: 0.3rem; }
+
+  .radio-group .radio-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--sans);
+    font-size: 0.92rem;
+    font-weight: 400;
+    letter-spacing: normal;
+    text-transform: none;
+    color: var(--dark-text);
+  }
+
+  .radio-item input[type="radio"] {
+    width: 1.15rem;
+    height: 1.15rem;
+    accent-color: var(--primary);
+    flex-shrink: 0;
+  }
+
+  .radio-item input[type="radio"]:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+  }
+
+  .form-note {
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    color: #4a4340;
+    line-height: 1.7;
+    background: var(--white);
+    border-left: 3px solid var(--primary);
+    padding: 1rem 1.25rem;
+    margin: 0.5rem 0 2rem;
   }
 
   .field-error {
@@ -555,6 +603,66 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="form-section">
         <h2 class="form-section-title">Health</h2>
+
+        <h3 class="form-subsection-title">Physical Activity Readiness (PAR-Q)</h3>
+
+        <fieldset class="form-group">
+          <legend>1. Has a doctor ever said you have a heart condition and should only do physical activity recommended by a doctor? *</legend>
+          <div class="radio-group">
+            <label class="radio-item"><input type="radio" name="parq_1" value="Yes" required> Yes</label>
+            <label class="radio-item"><input type="radio" name="parq_1" value="No" required> No</label>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <legend>2. Do you feel pain in your chest when you do physical activity? *</legend>
+          <div class="radio-group">
+            <label class="radio-item"><input type="radio" name="parq_2" value="Yes" required> Yes</label>
+            <label class="radio-item"><input type="radio" name="parq_2" value="No" required> No</label>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <legend>3. In the past month, have you had chest pain when you were not doing physical activity? *</legend>
+          <div class="radio-group">
+            <label class="radio-item"><input type="radio" name="parq_3" value="Yes" required> Yes</label>
+            <label class="radio-item"><input type="radio" name="parq_3" value="No" required> No</label>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <legend>4. Do you lose your balance because of dizziness, or do you ever lose consciousness? *</legend>
+          <div class="radio-group">
+            <label class="radio-item"><input type="radio" name="parq_4" value="Yes" required> Yes</label>
+            <label class="radio-item"><input type="radio" name="parq_4" value="No" required> No</label>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <legend>5. Do you have a bone or joint problem that could be made worse by a change in your physical activity? *</legend>
+          <div class="radio-group">
+            <label class="radio-item"><input type="radio" name="parq_5" value="Yes" required> Yes</label>
+            <label class="radio-item"><input type="radio" name="parq_5" value="No" required> No</label>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <legend>6. Is a doctor currently prescribing medication for your blood pressure or a heart condition? *</legend>
+          <div class="radio-group">
+            <label class="radio-item"><input type="radio" name="parq_6" value="Yes" required> Yes</label>
+            <label class="radio-item"><input type="radio" name="parq_6" value="No" required> No</label>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <legend>7. Do you know of any other reason why you should not do physical activity? *</legend>
+          <div class="radio-group">
+            <label class="radio-item"><input type="radio" name="parq_7" value="Yes" required> Yes</label>
+            <label class="radio-item"><input type="radio" name="parq_7" value="No" required> No</label>
+          </div>
+        </fieldset>
+
+        <p class="form-note">If you answered YES to any question, I'll ask for written clearance from your doctor before we start training.</p>
 
         <div class="form-group">
           <label>Do you have any existing health conditions or take any medications? Have you had any surgeries or major injuries? *
