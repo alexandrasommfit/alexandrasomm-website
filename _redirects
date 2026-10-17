@@ -1,1 +1,11 @@
+/about  /about.html  200
+/services  /services.html  200
+/faq  /faq.html  200
+/contact  /contact.html  200
+/links  /links.html  200
+/privacy  /privacy.html  200
+/terms  /terms.html  200
+/health-data-privacy  /health-data-privacy.html  200
 /get-started  /get-started.html  200
+/socials  /links  301
+/socials.html  /links  301
