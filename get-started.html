@@ -66,7 +66,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <div class="get-started-header">
     <p class="get-started-eyebrow">All of the hard work will be worth it.</p>
     <h1>Let's Get You Started</h1>
-    <p>Let's get you started. These questions help me understand where you are now and where you want to go, so our first call is about you, not paperwork. It takes about 10 minutes. Everything you share stays between us and is only used for your coaching.</p>
+    <p>Let's get you started. These questions help me understand where you are now and where you want to go, so our first call is about you, not paperwork. It takes about 10 minutes. What you share is used only for your coaching. It's stored and processed by a few service providers I use to run my business (listed in the <a href="/health-data-privacy">Consumer Health Data Privacy Policy</a>), and I never sell it or share it with advertisers.</p>
   </div>
 
   <div class="get-started-body">
@@ -280,9 +280,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <label for="health-consent-checkbox">I consent to Alexandra Somm Fit collecting and using the health information I provide on this form to assess my readiness and design my coaching program, as described in the <a href="/health-data-privacy">Consumer Health Data Privacy Policy</a>. *</label>
         </div>
 
+        <!-- VERIFY: with attorney: whether processor disclosure needs separate consent, and whether making it required is allowed -->
+        <div class="consent-group" style="margin-top:0.75rem;margin-bottom:0.75rem">
+          <input type="checkbox" name="health_data_sharing_consent" value="yes" id="health-sharing-consent-checkbox" required>
+          <label for="health-sharing-consent-checkbox">I consent to Alexandra Somm Fit sharing the health information I provide with the service providers listed in the <a href="/health-data-privacy">Consumer Health Data Privacy Policy</a> (Formspree, Google, Zapier, Notion and, if I become a client, Everfit) so they can store and process it on her behalf. *</label>
+        </div>
+
         <div class="consent-group" style="margin-top:0.75rem">
           <input type="checkbox" name="consent" value="yes" id="consent-checkbox" required>
           <label for="consent-checkbox">I understand this coaching is virtual, general fitness and nutrition guidance, not medical advice. *</label>
+        </div>
+
+        <div class="consent-group" style="margin-top:0.75rem">
+          <input type="checkbox" name="age_18_or_older" value="yes" id="age-checkbox" required>
+          <label for="age-checkbox">I'm 18 or older. *</label>
         </div>
       </div>
 
