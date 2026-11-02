@@ -756,17 +756,30 @@
   }
 
   /* ── RESPONSIVE ── */
-  @media (max-width: 768px) {
+  /* The desktop header (logo on one line + full Client Login) fits from 1100px.
+     Below that, use the existing hamburger so the logo and login button are not crushed. */
+  @media (max-width: 1099px) {
     nav { padding: 1rem 1.5rem; }
     .nav-links { display: none; }
     .hamburger { display: flex; }
+  }
+  /* An open phone menu must not stay on screen once the desktop links are showing. */
+  @media (min-width: 1100px) {
+    .mobile-menu,
+    .mobile-menu.open { display: none !important; }
+  }
 
+  /* The 3-column hero squeezes the headline and wraps Coaching Inquiry until ~1160px.
+     Stack it, same as the phone layout, through 1179px so the single-line button has room. */
+  @media (max-width: 1179px) {
     .hero { grid-template-columns: 1fr; }
     .hero-photo { display: none; }
     .hero-left { padding: 4rem 2rem 3rem; min-height: 60vh; }
     .hero-right { padding: 3rem 2rem 4rem; }
     .hero-left::before { font-size: 10rem; }
+  }
 
+  @media (max-width: 768px) {
     .intro-strip {
       grid-template-columns: 1fr;
       padding: 3.5rem 2rem;
