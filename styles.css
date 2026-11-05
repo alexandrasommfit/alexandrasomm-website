@@ -29,7 +29,7 @@
   }
 
   /* ── NAV ── */
-  nav {
+  header > nav {
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 150;
@@ -707,41 +707,189 @@
   /* ── FOOTER ── */
   footer {
     background: var(--dark-text);
-    padding: 3rem 6rem;
+    padding: 3rem 4rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-main {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1.5rem;
+    gap: 2rem 3rem;
+    padding-bottom: 1.75rem;
+  }
+
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.7rem;
+    min-width: 0;
   }
 
   .footer-logo {
     font-family: var(--serif);
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 600;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: rgba(245,245,245,0.7);
+    color: var(--white);
+    line-height: 1.2;
+    margin: 0;
   }
 
-  .footer-links {
-    display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-  }
-
-  .footer-links a {
+  .footer-tagline {
     font-family: var(--sans);
-    font-size: 0.72rem;
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: rgba(245,245,245,0.78);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .footer-tagline::before {
+    content: "";
+    display: block;
+    width: 2.25rem;
+    height: 1px;
+    background: var(--primary);
+    margin-bottom: 0.7rem;
+  }
+
+  .footer-social {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.55rem;
+  }
+
+  .footer-social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    min-height: 2.5rem;
+    padding: 0.4rem 0.85rem;
+    border: 1px solid rgba(245,245,245,0.22);
+    color: rgba(245,245,245,0.92);
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    line-height: 1;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+  }
+
+  .footer-social a:hover {
+    color: var(--white);
+    border-color: var(--primary);
+    background: rgba(167,77,74,0.22);
+  }
+
+  .footer-icon {
+    width: 15px;
+    height: 15px;
+    flex: 0 0 auto;
+    display: block;
+  }
+
+  .footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.85rem 2rem;
+    padding-top: 1.15rem;
+    border-top: 1px solid rgba(245,245,245,0.16);
+  }
+
+  .footer-legal {
+    margin: 0;
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    letter-spacing: 0.02em;
+    line-height: 1.5;
+    color: rgba(245,245,245,0.72);
+  }
+
+  .footer-legal-nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.35rem 1.25rem;
+    margin-left: auto;
+  }
+
+  .footer-legal-nav a,
+  .footer-link-btn {
+    appearance: none;
+    background: none;
+    border: 0;
+    padding: 0.25rem 0;
+    cursor: pointer;
+    font-family: var(--sans);
+    font-size: 0.68rem;
     font-weight: 700;
     letter-spacing: 0.1em;
+    line-height: 1.4;
     text-transform: uppercase;
-    color: rgba(245,245,245,0.6);
     text-decoration: none;
+    color: rgba(245,245,245,0.78);
     transition: color 0.2s;
   }
 
-  .footer-links a:hover { color: var(--white); text-decoration: underline; }
+  .footer-legal-nav a:hover,
+  .footer-link-btn:hover {
+    color: var(--white);
+    text-decoration: underline;
+    text-underline-offset: 0.22em;
+  }
+
+  @media (max-width: 1199px) {
+    footer { padding: 2.75rem 2.25rem 1.65rem; }
+    .footer-main {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.6rem;
+    }
+    .footer-brand { align-items: center; }
+    .footer-tagline::before { margin-left: auto; margin-right: auto; }
+    .footer-social { justify-content: center; }
+    .footer-bottom {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.9rem;
+    }
+    .footer-legal-nav { margin-left: 0; justify-content: center; }
+  }
+
+  @media (max-width: 720px) {
+    footer { padding: 2.5rem 1.25rem 1.5rem; }
+    .footer-social,
+    .footer-legal-nav {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem;
+      width: 100%;
+      max-width: 22rem;
+    }
+    .footer-social a { width: 100%; }
+    .footer-legal-nav a,
+    .footer-link-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 2.5rem;
+      text-align: center;
+    }
+  }
 
   /* ── ANIMATIONS ── */
   @keyframes fadeUp {
@@ -759,7 +907,7 @@
   /* The desktop header (logo on one line + full Client Login) fits from 1100px.
      Below that, use the existing hamburger so the logo and login button are not crushed. */
   @media (max-width: 1099px) {
-    nav { padding: 1rem 1.5rem; }
+    header > nav { padding: 1rem 1.5rem; }
     .nav-links { display: none; }
     .hamburger { display: flex; }
   }
@@ -792,13 +940,6 @@
 
     .contact-header { padding: 3.5rem 2rem 2.5rem; }
     .faq-header { padding: 3.5rem 2rem 2.5rem; }
-
-
-    footer {
-      flex-direction: column;
-      text-align: center;
-      padding: 2.5rem 2rem;
-    }
   }
 
   /* ── SERVICES PAGE ── */
@@ -1465,15 +1606,6 @@
   .consent-group a:hover, .form-note a:hover { color: var(--dark-text); }
 
 
-  /* ── FOOTER (brand + legal line) ── */
-  .footer-brand { display: flex; flex-direction: column; gap: 0.4rem; }
-  .footer-legal { font-family: var(--sans); font-size: 0.72rem; color: rgba(245,245,245,0.75); letter-spacing: 0.04em; }
-  .footer-link-btn {
-    background: none; border: none; padding: 0; cursor: pointer;
-    font-family: var(--sans); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
-    text-transform: uppercase; color: rgba(245,245,245,0.6); transition: color 0.2s;
-  }
-  .footer-link-btn:hover { color: var(--white); text-decoration: underline; }
 
   /* ── COOKIE CONSENT BANNER ── */
   .consent-banner {
