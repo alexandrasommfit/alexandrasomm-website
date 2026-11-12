@@ -439,7 +439,7 @@
 
   .newsletter-form {
     display: flex;
-    max-width: 420px;
+    max-width: 640px;
     margin: 0 auto;
     gap: 0;
   }
@@ -1124,14 +1124,15 @@
   .newsletter-form {
     display: flex;
     gap: 0;
-    max-width: 480px;
+    max-width: 640px;
     margin: 0 auto 0.75rem;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    align-items: stretch;
   }
 
   .newsletter-form input {
-    flex: 1;
-    min-width: 180px;
+    flex: 1 1 0px;
+    min-width: 0;
     padding: 0.9rem 1.2rem;
     border: 1px solid rgba(167,77,74,0.3);
     border-right: none;
@@ -1148,6 +1149,7 @@
   }
 
   .newsletter-form button {
+    flex: 0 0 auto;
     padding: 0.9rem 1.8rem;
     background: var(--primary);
     color: var(--white);
@@ -1173,7 +1175,13 @@
 
   @media (max-width: 768px) {
     .newsletter-form { flex-direction: column; }
-    .newsletter-form input { border-right: 1px solid rgba(167,77,74,0.3); border-bottom: none; }
+    .newsletter-form input {
+      flex: 0 0 auto;
+      width: 100%;
+      border-right: 1px solid rgba(167,77,74,0.3);
+      border-bottom: none;
+    }
+    .newsletter-form button { width: 100%; }
   }
 
 /* ── NEWSLETTER ── */
@@ -1204,14 +1212,15 @@
   .newsletter-form {
     display: flex;
     gap: 0;
-    max-width: 480px;
+    max-width: 640px;
     margin: 0 auto 0.75rem;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    align-items: stretch;
   }
 
   .newsletter-form input {
-    flex: 1;
-    min-width: 180px;
+    flex: 1 1 0px;
+    min-width: 0;
     padding: 0.9rem 1.2rem;
     border: 1px solid rgba(167,77,74,0.3);
     border-right: none;
@@ -1228,6 +1237,7 @@
   }
 
   .newsletter-form button {
+    flex: 0 0 auto;
     padding: 0.9rem 1.8rem;
     background: var(--primary);
     color: var(--white);
@@ -1253,7 +1263,13 @@
 
   @media (max-width: 768px) {
     .newsletter-form { flex-direction: column; }
-    .newsletter-form input { border-right: 1px solid rgba(167,77,74,0.3); border-bottom: none; }
+    .newsletter-form input {
+      flex: 0 0 auto;
+      width: 100%;
+      border-right: 1px solid rgba(167,77,74,0.3);
+      border-bottom: none;
+    }
+    .newsletter-form button { width: 100%; }
   }
 
 

@@ -240,6 +240,33 @@
     });
   }
 
+  /* Mailchimp prefixes field errors with "0 - " or "1 - ". Show the sentence
+     after that prefix. Already-subscribed stays a short friendly line and
+     never repeats the address Mailchimp echoes back. Nothing here is sent
+     to dataLayer. */
+  function newsletterErrorMessage(resp) {
+    var raw = resp && resp.msg != null ? String(resp.msg) : '';
+    if (/already subscribed/i.test(raw)) {
+      return "You're already on the list. You're all set.";
+    }
+    var text = raw
+      .replace(/<[^>]*>/g, ' ')
+      .replace(/&nbsp;/gi, ' ')
+      .replace(/&amp;/gi, '&')
+      .replace(/&lt;/gi, '<')
+      .replace(/&gt;/gi, '>')
+      .replace(/&quot;/gi, '"')
+      .replace(/&#0*39;|&apos;/gi, "'")
+      .replace(/\s+/g, ' ')
+      .trim()
+      .replace(/^\d+\s*-\s*/, '');
+    if (/already subscribed/i.test(text)) {
+      return "You're already on the list. You're all set.";
+    }
+    if (text) return text;
+    return "Please check your first name and email, then try again.";
+  }
+
   function bindNewsletter(form) {
     if (!form || form.getAttribute('data-asf-newsletter') === '1') return;
     if (String(form.action || '').indexOf('list-manage.com') === -1) return;
@@ -282,7 +309,7 @@
           btn.disabled = false;
           btn.textContent = label;
         }
-        status.textContent = "That email couldn't be added. If you're already on the list, you're all set.";
+        status.textContent = newsletterErrorMessage(resp);
         status.className = 'form-status show error';
       }).catch(function () {
         if (btn) {
