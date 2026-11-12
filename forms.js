@@ -31,6 +31,11 @@
         });
         if (!res.ok) throw new Error('Request failed');
 
+        // Campaign params only. Never push names, email, or message text.
+        if (typeof window.asfTrack === 'function') {
+          window.asfTrack('generate_lead', 'contact', contact);
+        }
+
         contact.reset();
         cBtn.disabled = false;
         cBtn.textContent = cLabel;
@@ -107,6 +112,9 @@
           headers: { 'Accept': 'application/json' }
         });
         if (!res.ok) throw new Error('Form submission failed');
+        if (typeof window.asfTrack === 'function') {
+          window.asfTrack('generate_lead', 'get_started', gs);
+        }
         gs.style.display = 'none';
         thankYou.style.display = 'block';
         thankYou.setAttribute('tabindex', '-1');
