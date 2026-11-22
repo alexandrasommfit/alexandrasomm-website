@@ -274,27 +274,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <label>Is there anything else you think is important for me to know about you and your goals? *
           <textarea name="additional_info" required></textarea></label>
         </div>
-
-        <div class="consent-group" style="margin-bottom:0.75rem">
-          <input type="checkbox" name="health_data_consent" value="yes" id="health-consent-checkbox" required>
-          <label for="health-consent-checkbox">I consent to Alexandra Somm Fit collecting and using the health information I provide on this form to assess my readiness and design my coaching program, as described in the <a href="/health-data-privacy">Consumer Health Data Privacy Policy</a>. *</label>
-        </div>
-
-        <!-- VERIFY: with attorney: whether processor disclosure needs separate consent, and whether making it required is allowed -->
-        <div class="consent-group" style="margin-top:0.75rem;margin-bottom:0.75rem">
-          <input type="checkbox" name="health_data_sharing_consent" value="yes" id="health-sharing-consent-checkbox" required>
-          <label for="health-sharing-consent-checkbox">I consent to Alexandra Somm Fit sharing the health information I provide with the service providers listed in the <a href="/health-data-privacy">Consumer Health Data Privacy Policy</a> (Formspree, Google, Zapier, Notion and, if I become a client, Everfit) so they can store and process it on her behalf. *</label>
-        </div>
-
-        <div class="consent-group" style="margin-top:0.75rem">
-          <input type="checkbox" name="consent" value="yes" id="consent-checkbox" required>
-          <label for="consent-checkbox">I understand this coaching is virtual, general fitness and nutrition guidance, not medical advice. *</label>
-        </div>
-
-        <div class="consent-group" style="margin-top:0.75rem">
-          <input type="checkbox" name="age_18_or_older" value="yes" id="age-checkbox" required>
-          <label for="age-checkbox">I'm 18 or older. *</label>
-        </div>
       </div>
 
       <!-- Hidden fields for Formspree / CRM automation -->
@@ -303,6 +282,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <div style="position:absolute;left:-5000px;" aria-hidden="true">
         <label>Leave this field blank
         <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
+      </div>
+
+      <div class="consent-group" style="margin-top:0.5rem;margin-bottom:0.75rem">
+        <input type="checkbox" name="health_data_consent" id="health-consent-checkbox" required value="I consent to Alexandra Somm Fit collecting my health info to design my coaching program and sharing it with the providers listed in the Consumer Health Data Privacy Policy.">
+        <label for="health-consent-checkbox">I consent to Alexandra Somm Fit collecting my health info to design my coaching program and sharing it with the providers listed in the <a href="/health-data-privacy">Consumer Health Data Privacy Policy</a>. *</label>
+      </div>
+
+      <div class="consent-group" style="margin-top:0.75rem;margin-bottom:0.5rem">
+        <input type="checkbox" name="coaching_acknowledgement" id="coaching-acknowledgement-checkbox" required value="I understand this is virtual, general fitness and nutrition guidance, not medical advice, and I'm 18 or older.">
+        <label for="coaching-acknowledgement-checkbox">I understand this is virtual, general fitness and nutrition guidance, not medical advice, and I'm 18 or older. *</label>
       </div>
 
       <button class="btn-submit" type="submit">Send My Answers</button>
