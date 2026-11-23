@@ -1627,8 +1627,21 @@
     padding: 0 !important;
     border: 0 !important;
   }
-  .form-note a, .faq-answer a { color: var(--primary); }
-  .form-note a:hover { color: var(--dark-text); }
+  .faq-answer a { color: var(--primary); }
+  .form-note a,
+  .form-note a:hover,
+  .form-note a:visited,
+  .form-note a:active,
+  .form-note a:focus,
+  .form-note a:focus-visible {
+    color: inherit;
+    background: none;
+    text-decoration: none;
+  }
+  .form-note a:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 3px;
+  }
   .consent-group a,
   .consent-group a:hover,
   .consent-group a:visited,
