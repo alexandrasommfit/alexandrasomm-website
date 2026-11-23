@@ -1642,6 +1642,28 @@
     outline: 3px solid var(--primary);
     outline-offset: 3px;
   }
+  .form-privacy-notice {
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--dark-text);
+    line-height: 1.6;
+    margin: 1.5rem 0 0.75rem;
+  }
+  .form-privacy-notice a,
+  .form-privacy-notice a:hover,
+  .form-privacy-notice a:visited,
+  .form-privacy-notice a:active,
+  .form-privacy-notice a:focus,
+  .form-privacy-notice a:focus-visible {
+    color: inherit;
+    background: none;
+    text-decoration: none;
+  }
+  .form-privacy-notice a:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 3px;
+  }
 
 
 
